@@ -200,6 +200,7 @@ void KNNImpl::initialize(Size _frameSize, int _frameType) {
     // for each sample of 3 speed pixel models each pixel bg model we store ...
     // channels correspond to the colour values and a flag for each pixel
     bgmodel_d.create(nN*3, frameSize.height*frameSize.width, CV_8UC4);
+    bgmodel_d.setTo(0);
 
     // Model indices, channels correspond to Long, Short, Mid
     aModelIndex.create(frameSize.height, frameSize.width, CV_8UC3);
